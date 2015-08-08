@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3JS - Sample</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<p>This is a paragraph</p>
+<script type="text/javascript">
+    d3.select("p")
+            .text("Hello World!") // replacing existing object
+    d3.select("body")
+            .append("p")
+            .text("Added a new paragraph") // adding new object
+    console.log(d3)
+</script>
+</body>
+</html>
