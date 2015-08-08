@@ -126,7 +126,7 @@
       <file leaf-file-name="bar-chart.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basic/bar-chart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="249" selection-end="249" vertical-scroll-proportion="0.1214511" vertical-offset="0" max-vertical-offset="1268">
+            <state line="18" column="37" selection-start="660" selection-end="660" vertical-scroll-proportion="0.31230283" vertical-offset="0" max-vertical-offset="1268">
               <folding />
             </state>
           </provider>
@@ -163,6 +163,11 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -181,8 +186,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="290" />
-    <option name="y" value="158" />
+    <option name="x" value="269" />
+    <option name="y" value="134" />
     <option name="width" value="2227" />
     <option name="height" value="1400" />
   </component>
@@ -279,6 +284,7 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -532,16 +538,16 @@
       <created>1439007365203</created>
       <updated>1439007365203</updated>
       <workItem from="1439007366597" duration="1200000" />
-      <workItem from="1439008631578" duration="13533000" />
+      <workItem from="1439008631578" duration="13796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14733000" />
+    <option name="totallyTimeSpent" value="14996000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="158" width="2227" height="1400" extended-state="0" />
-    <editor active="false" />
+    <frame x="269" y="134" width="2227" height="1400" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -561,7 +567,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.168837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.168837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -679,7 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/basic/bar-chart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="249" selection-end="249" vertical-scroll-proportion="0.1214511" vertical-offset="0" max-vertical-offset="1268">
+        <state line="18" column="37" selection-start="660" selection-end="660" vertical-scroll-proportion="0.31230283" vertical-offset="0" max-vertical-offset="1268">
           <folding />
         </state>
       </provider>
