@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 - SVG Layering and Bordering</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", "500")
+            .attr("height", "500")
+
+    var recWidth = 100;
+    var recHeight = 100;
+    var rect1 = canvas.append("rect")
+            .attr("x", "0")
+            .attr("y", "0")
+            .attr("width", recWidth)
+            .attr("height", recHeight)
+            .attr("fill", "red")
+
+    var rect2 = canvas.append("rect")
+            .attr("x", "80")
+            .attr("y", "20")
+            .attr("width", recWidth)
+            .attr("height", recHeight)
+            .attr("fill", "purple")
+            .attr("stroke", "black")
+            .attr("stroke-width", 5)
+
+    var rect3 = canvas.append("rect")
+            .attr("x", "160")
+            .attr("y", "40")
+            .attr("width", recWidth)
+            .attr("height", recHeight)
+            .attr("fill", "yellow")
+</script>
+</body>
+</html>
