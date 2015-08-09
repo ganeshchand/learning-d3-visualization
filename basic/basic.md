@@ -68,4 +68,27 @@ Common SVG properties:
 
 There are two ways to apply styles to an SVG element.
 * inline - as an attribute of the element
+    * example:
+        <circle cx="25" cy="25" r="20" fill="yellow" stroke="orange" stroke-width="5"/>
 * CSS style rule
+    * example:
+        <circle cx="25" cy="25" r="20" class="pumpkin"/>
+
+        .pumpkin {
+            fill: yellow
+            stroke: orange
+            stroke-width: 5
+        }
+Use CSS style. The code is easier to read and maintainable. Design change is faster. Re-use styles.
+
+Note: Some styles are not CSS styles. They are SVG specific properties.
+fill, stroke, stroke-width are NOT CSS properties. The nearest CSS equivalents are background-color
+and border.
+The best practice is to group these properties as part of svg as shown below. This helps you identify
+styles that are SVG-specific.
+
+    svg .pumpkin {
+            fill: yellow
+            stroke: orange
+            stroke-width: 5
+    }

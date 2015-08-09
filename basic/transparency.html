@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 - Drawing a Circle</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+
+    var group1 = canvas.append("g")
+            .attr("width", 500)
+            .attr("height", 250)
+
+    var circle1 = group1.append("circle")
+            .attr("cx", "25")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(128, 0, 128, 1.0")
+
+    var circle2 = group1.append("circle")
+            .attr("cx", "50")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(0, 0, 225, 0.75")
+
+
+    var circle3 = group1.append("circle")
+            .attr("cx", "75")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(0, 225, 0, 0.5")
+
+
+    var circle4 = group1.append("circle")
+            .attr("cx", "100")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(225, 0, 0, 0.4")
+
+    // with rgba(). transparency is applied to the fill and and stroke colors independently.
+    // The following circles fill is 75% opaque and their strokes are 25% opaque.
+    var group2 = canvas.append("g")
+            .attr("transform", "translate(0, 100)")
+
+    var circle1 = group2.append("circle")
+            .attr("cx", "25")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(128, 0, 128, 0.75")
+            .attr("stroke", "rgba(0, 225, 0, 0.25")
+            .attr("stroke-width", "10")
+
+    var circle2 = group2.append("circle")
+            .attr("cx", "75")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(0, 225, 0, 0.75")
+            .attr("stroke", "rgba(0, 0, 225, 0.25")
+            .attr("stroke-width", "10")
+
+    var circle3 = group2.append("circle")
+            .attr("cx", "125")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "rgba(225, 225, 0, 0.75")
+            .attr("stroke", "rgba(225, 0, 0, 0.25")
+            .attr("stroke-width", "10")
+
+
+    // To apply transparency to an entire element, use opacity attribute
+    // 1.0 - 100% opaque
+    var group3 = canvas.append("g")
+            .attr("transform", "translate(0, 200)")
+
+    var circle1 = group3.append("circle")
+            .attr("cx", "25")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "purple")
+            .attr("stroke", "green")
+            .attr("stroke-width", "10")
+            .attr("opacity", "0.9")
+
+    var circle2 = group3.append("circle")
+            .attr("cx", "65")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "green")
+            .attr("stroke", "blue")
+            .attr("stroke-width", "10")
+            .attr("opacity", "0.5")
+
+    var circle3 = group3.append("circle")
+            .attr("cx", "105")
+            .attr("cy", "25")
+            .attr("r", "20")
+            .attr("fill", "yellow")
+            .attr("stroke", "red")
+            .attr("stroke-width", "10")
+            .attr("opacity", "0.4")
+
+</script>
+</body>
+</html>

@@ -73,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basic.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="basic.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basic/basic.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="16" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.8759065" vertical-offset="453" max-vertical-offset="1694">
+            <state line="87" column="29" selection-start="2644" selection-end="2644" vertical-scroll-proportion="-17.35484" vertical-offset="1376" max-vertical-offset="2200">
               <folding />
             </state>
           </provider>
@@ -85,10 +85,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="layering-bordering.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/basic/layering-bordering.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="45" selection-start="0" selection-end="1088" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="1012">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="circle.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basic/circle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="37" selection-start="707" selection-end="707" vertical-scroll-proportion="-5.6853933" vertical-offset="0" max-vertical-offset="704">
+            <state line="24" column="22" selection-start="0" selection-end="734" vertical-scroll-proportion="-5.9325843" vertical-offset="0" max-vertical-offset="704">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transparency.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/basic/transparency.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="43" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.5830546" vertical-offset="1567" max-vertical-offset="2486">
               <folding />
             </state>
           </provider>
@@ -99,18 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="63" selection-start="67" selection-end="119" vertical-scroll-proportion="-2.8387096" vertical-offset="0" max-vertical-offset="528">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Applying Style.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/Applying Style.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="411" selection-end="411" vertical-scroll-proportion="-14.193548" vertical-offset="0" max-vertical-offset="572">
-              <folding>
-                <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1439015910000" expanded="true" signature="131:313" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +133,7 @@
       <file leaf-file-name="simple-data-visualization.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basic/simple-data-visualization.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="21" selection-start="221" selection-end="291" vertical-scroll-proportion="-7.806452" vertical-offset="0" max-vertical-offset="660">
+            <state line="24" column="36" selection-start="811" selection-end="811" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -136,7 +142,7 @@
       <file leaf-file-name="bar-chart.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basic/bar-chart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="144" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-22.709677" vertical-offset="0" max-vertical-offset="1166">
+            <state line="42" column="51" selection-start="1716" selection-end="1755" vertical-scroll-proportion="-23.548388" vertical-offset="194" max-vertical-offset="1166">
               <folding />
             </state>
           </provider>
@@ -151,18 +157,6 @@
                 <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/d3-extension-libraries/crossfilter/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="69" selection-start="843" selection-end="843" vertical-scroll-proportion="-9.225806" vertical-offset="0" max-vertical-offset="418">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -195,11 +189,13 @@
         <option value="$PROJECT_DIR$/basic/basic-shapes.html" />
         <option value="$PROJECT_DIR$/basic/circle.html" />
         <option value="$PROJECT_DIR$/basic/basic.md" />
+        <option value="$PROJECT_DIR$/basic/layering-bordering.html" />
+        <option value="$PROJECT_DIR$/basic/transparency.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="948" />
+    <option name="x" value="764" />
     <option name="y" value="23" />
     <option name="width" value="1624" />
     <option name="height" value="1400" />
@@ -565,22 +561,22 @@
       <created>1439007365203</created>
       <updated>1439007365203</updated>
       <workItem from="1439007366597" duration="1200000" />
-      <workItem from="1439008631578" duration="19321000" />
+      <workItem from="1439008631578" duration="25548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20521000" />
+    <option name="totallyTimeSpent" value="26748000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="948" y="23" width="1624" height="1400" extended-state="0" />
-    <editor active="true" />
+    <frame x="764" y="23" width="1624" height="1400" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2584523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -613,6 +609,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fundamentals/index.html">
@@ -647,8 +647,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="26" selection-start="411" selection-end="411" vertical-scroll-proportion="-14.193548" vertical-offset="0" max-vertical-offset="572">
           <folding>
-            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1439015910000" expanded="true" signature="131:313" placeholder="..." />
+            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1439015910000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -701,20 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/simple-data-visualization.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="21" selection-start="221" selection-end="291" vertical-scroll-proportion="-7.806452" vertical-offset="0" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basic/bar-chart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="144" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-22.709677" vertical-offset="0" max-vertical-offset="1166">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/basic-shapes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="33" selection-start="642" selection-end="642" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="1122">
@@ -722,21 +708,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/circle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="37" selection-start="707" selection-end="707" vertical-scroll-proportion="-5.6853933" vertical-offset="0" max-vertical-offset="704">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/basic.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="16" selection-start="1942" selection-end="1942" vertical-scroll-proportion="0.8759065" vertical-offset="453" max-vertical-offset="1694">
+        <state line="87" column="29" selection-start="2644" selection-end="2644" vertical-scroll-proportion="-17.35484" vertical-offset="1376" max-vertical-offset="2200">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/circle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="22" selection-start="0" selection-end="734" vertical-scroll-proportion="-5.9325843" vertical-offset="0" max-vertical-offset="704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/simple-data-visualization.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="36" selection-start="811" selection-end="811" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/bar-chart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="51" selection-start="1716" selection-end="1755" vertical-scroll-proportion="-23.548388" vertical-offset="194" max-vertical-offset="1166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/layering-bordering.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="45" selection-start="0" selection-end="1088" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="1012">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/transparency.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="43" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.5830546" vertical-offset="1567" max-vertical-offset="2486">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
