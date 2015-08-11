@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3JS - Sample</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    var w = 500;
+    var h = 500;
+    var padding = 2;
+    var dataset = [5,10,15,20,25];
+
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height",h);
+
+    canvas.selectAll("rect")
+            .data(dataset)
+    .enter()
+    .append("rect")
+            .attr("x",function(d,i){
+                //return (i *25)  // 5 px gap between the bars
+                return ((w / dataset.length) * i); // evenly spaced bars based on svg width
+            })
+
+            .attr("y", function(d){
+                return (h - (d * 4));
+            })
+            //.attr("width",20)  // fixed width
+            .attr("width", function(d){
+//                console.log(dataset.length)
+                return (w / dataset.length - padding)    // 500 / 5 - 2 = 100 - 2  = 98 : each bar gets
+            })
+            //.attr("height",200) // fixed height
+            .attr("height", function(d){
+                return (d * 4) ;
+            });
+
+</script>
+</body>
+</html>

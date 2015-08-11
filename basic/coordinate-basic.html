@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coordinate System</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+        svg {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", 300)
+            .attr("height", 300)
+
+    var topLeftRect = canvas.append("rect")
+    var topRightRect = canvas.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 50)
+            .attr("height",50)
+            .attr("fill", "blue")
+
+    var topRightRect = canvas.append("rect")
+            .attr("x", 250)
+            .attr("y", 0)
+            .attr("width", 50)
+            .attr("height",50)
+            .attr("fill", "green    ")
+
+    var bottomLeftRect = canvas.append("rect")
+            .attr("x", 0)
+            .attr("y", 250)
+            .attr("width", 50)
+            .attr("height",50)
+            .attr("fill", "red")
+
+    var bottomRect = canvas.append("rect")
+            .attr("x", 250)
+            .attr("y", 250)
+            .attr("width", 50)
+            .attr("height",50)
+            .attr("fill", "red")
+
+    var center = canvas.append("circle")
+            .attr("cx", 150)
+            .attr("cy", 150)
+            .attr("r", 20)
+            .attr("fill", "blue")
+</script>
+</body>
+</html>
