@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>D3.js Step by Step: Step 6 - Animating Interactivity</title>
+    <link data-require="normalize@*" data-semver="3.0.1" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" />
+
+</head>
+
+<body>
+<h1>Toronto Parking Tickets by Weekday in 2012</h1>             <!-- NEW -->
+<div id="chart"></div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js" data-semver="3.4.6" data-require="d3@*"></script>
+<script>
+    (function(d3) {
+        'use strict';
+
+        var dataset = [
+            { label: 'Abulia', count: 10 },
+            { label: 'Betelgeuse', count: 20 },
+            { label: 'Cantaloupe', count: 30 },
+            { label: 'Dijkstra', count: 40 }
+        ];
+
+        var width = 360;
+        var height = 360;
+        var radius = Math.min(width, height) / 2;
+
+        var color = d3.scale.category20b();
+
+        var svg = d3.select('#chart')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .append('g')
+                .attr('transform', 'translate(' + (width / 2) +
+                        ',' + (height / 2) + ')');
+
+        var arc = d3.svg.arc()
+                .outerRadius(radius);
+
+        var pie = d3.layout.pie()
+                .value(function(d) { return d.count; })
+                .sort(null);
+
+        var path = svg.selectAll('path')
+                .data(pie(dataset))
+                .enter()
+                .append('path')
+                .attr('d', arc)
+                .attr('fill', function(d, i) {
+                    return color(d.data.label);
+                });
+
+    })(window.d3);
+</script>
+</body>
+
+</html>
