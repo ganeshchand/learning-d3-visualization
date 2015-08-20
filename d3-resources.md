@@ -21,6 +21,11 @@
 
 *   Interactive Data Visualization for the Web
     *   [code](https://github.com/alignedleft/d3-book)
+*   Data Visualization with D3.js Cookbook
+    *   [code](https://github.com/NickQiZhu/d3-cookbook)
+*   Getting Started with D3
+    *   [code](https://github.com/mikedewar/getting_started_with_d3)
+
 
 ###Video Tutorials
 *   Introduction to D3 By Curran Kelleher
@@ -55,10 +60,12 @@
 *   [SVG Attribute reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
 
 ###D3 Charts Libraries
+*   Popular
+    *   [dc.js](http://dc-js.github.io/dc.js/): Multidimensional D3 framework
 
 *   [dimple](http://dimplejs.org/)
 *   [Rickshaw](http://code.shutterstock.com/rickshaw/)
-*   [dc.js](http://dc-js.github.io/dc.js/)
+
 *   [Ember Charts](http://addepar.github.io/#/ember-charts/overview)
 *   [MetricsGraphics.js](http://metricsgraphicsjs.org/)
 *   [Epoch](http://fastly.github.io/epoch/)
@@ -87,6 +94,24 @@
 *   [Dance.js](https://github.com/michael/dance)
 *   [Dynamic-Graphs](https://github.com/mlarocca/Dynamic-Charts)
 *   [PykCharts.js](http://pykcharts.com/)
+
+
+###Discussion Forum
+
+*[Google group](https://groups.google.com/forum/?fromgroups#!forum/d3-js)
+*[Stack Overflow](http://stackoverflow.com/questions/tagged/d3.js)
+
+
+###Online Tools
+**bl.ocks.org:**
+
+
+[bl.ocks.org](http://bl.ocks.org) is a viewer for code examples which are hosted on Gist. You are able to load your code into Gist, and then from bl.ocks.org you can view them.
+
+
+
+
+
 
 
 
