@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3: Drawing divs with data</title>
+    <script type="text/javascript" src="../d3.v3.js"></script>
+    <style type="text/css">
+
+        div.bar {
+            display: inline-block;
+            width: 20px;
+            background-color: teal;
+            margin-right: 2px;
+        }
+        div.separator {
+            display: block;
+            height: 20px;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        div.container{
+            width: 600px;
+            height: 400px;
+            background-color: burlywood;
+        }
+        h2{
+            color: royalblue;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    d3.select("body").append("h2").text("Drawing DIVs using D3");
+
+    var containerDiv = d3.select("body").append("div")
+            .attr("class", "container");
+
+    var drawDiv = function(dset){
+        containerDiv.selectAll("div")
+                .data(dset)
+                .enter()
+                .append("div")
+                .attr("class", "bar")
+                .style("height", function (d) {
+                    return d * 4 + "px"
+                });
+    };
+
+    // fixed dataset
+    var dataset = [
+        25, 7,   5, 10, 15, 20, 11,
+        14, 23, 11, 28, 11, 10, 03,
+        09, 14, 12, 15, 22, 20, 05
+    ];
+
+//    drawDiv(dataset);
+
+    containerDiv.append("div").attr("class", "separator");
+
+    // Using Random data - Useful for testing
+
+    var randomDataset = [];
+
+    var limit = 25;
+    for(var i=0; i<limit;i++){
+        var newNumber = Math.floor(Math.random() * 30); // 25 - number will fall between 0 - 24
+        randomDataset.push(newNumber)
+    }
+    console.log(randomDataset)
+            console.log("There are "+randomDataset.length + " elements")
+    drawDiv(randomDataset)
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> <!-- Encoding is needed to ensure the browser can parse D3's functions and data properly-->
+    <title>D3 Page Template</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    var dataset = [5, 10, 15, 20, 25];
+    var width = 500;
+    var height = 200;
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+
+    canvas.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d, i){
+                return (50 * i) + 25; // i starts with 0. it is a counter provided by d3.
+            })
+            .attr("cy", height / 2) // center of the canvas
+            .attr("r", function(d){
+                return d;
+            })
+            .attr("fill", "green")
+            .attr("stroke", "blue")
+            .attr("stroke-width", 5)
+
+
+</script>
+</body>
+</html>

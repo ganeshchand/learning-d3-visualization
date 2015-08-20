@@ -50,6 +50,9 @@
 *   [University of Washington Interactive Data Lab  PAPERS](http://idl.cs.washington.edu/papers/d3)
 
 
+###API reference
+*   [D3 API Reference](https://github.com/mbostock/d3/wiki/API-Reference)
+*   [SVG Attribute reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
 
 ###D3 Charts Libraries
 

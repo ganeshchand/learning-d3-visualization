@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3: Drawing Bar chart Using Divs and Data</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">
+        h2 {
+            color: royalblue;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    d3.select("body").append("h2").text("Drawing Bar chart Using Divs and Data");
+
+    var w = 500;
+    var h = 300;
+    var barPadding = 1;
+    var barMagnify = 4;
+    var canvas = d3.select("body").append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+
+    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+        11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+    //    canvas.selectAll("text")
+    //            .data(dataset)
+    //            .enter()
+    //            .append("text")
+    //            .text(function(d){
+    //                return d;
+    //            })
+    //            .attr("x", function(d, i) {
+    //                return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+    //            })
+    //            .attr("y", function(d) {
+    //                return h - (d * 4) + 14;
+    //            })
+
+
+    canvas.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x", function (d, i) {
+                return i * (w / dataset.length);
+            })
+            .attr("y", function (d) {
+                return h - (d * barMagnify);
+            })
+            .attr("width", (w / dataset.length) - barPadding)
+            .attr("height", function (d) {
+                return d * barMagnify; // Times 4
+            })
+            .attr("fill", function (d) {
+                return "rgb(" + 0 + "," + 0 + "," + (d * 10) + ")";
+                // data-based color encoding - taller bar will be more blues
+                // red and green are fixed at zero
+            })
+
+    // adding labels
+    canvas.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function (d) {
+                return d;
+            })
+            .attr("text-anchor", "middle")
+            .attr("x", function (d, i) {
+                return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+            })
+            .attr("y", function (d) {
+                return h - (d * 4) + 14;
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "11px")
+            .attr("fill", "white");
+
+
+</script>
+</body>
+</html>
