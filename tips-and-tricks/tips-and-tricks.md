@@ -44,4 +44,13 @@ In SVG
  you are not using CSS names.
  Complete SVG reference: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
 
+values for fill:
+
+.path {
+
+fill: none // other values: yes, actual color values:red, green, etc.
+
+}
+
+
 

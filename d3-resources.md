@@ -49,6 +49,13 @@
 *   [D3 Tutorials for CSE512 Data Visualization Course at University of Washington](http://uwdata.github.io/d3-tutorials/)
     *   [code](https://github.com/uwdata/d3-tutorials)
 
+###Blogs
+*   [D3: Scales and color](http://www.jeromecukier.net/blog/2011/08/11/d3-scales-and-color/)
+
+
+*   [Margin Convention](http://bl.ocks.org/mbostock/3019563)
+
+
 
 ###D3 Academic Paper
 *   [D3: Data-Driven Documents](http://vis.stanford.edu/papers/d3)
@@ -99,6 +106,8 @@
 ###Discussion Forum
 
 *[Google group](https://groups.google.com/forum/?fromgroups#!forum/d3-js)
+
+
 *[Stack Overflow](http://stackoverflow.com/questions/tagged/d3.js)
 
 
