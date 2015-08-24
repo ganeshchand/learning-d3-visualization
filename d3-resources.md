@@ -105,10 +105,10 @@
 
 ###Discussion Forum
 
-*[Google group](https://groups.google.com/forum/?fromgroups#!forum/d3-js)
+*   [Google group](https://groups.google.com/forum/?fromgroups#!forum/d3-js)
 
 
-*[Stack Overflow](http://stackoverflow.com/questions/tagged/d3.js)
+*   [Stack Overflow](http://stackoverflow.com/questions/tagged/d3.js)
 
 
 ###Online Tools
