@@ -26,6 +26,9 @@
 *   Getting Started with D3
     *   [code](https://github.com/mikedewar/getting_started_with_d3)
 
+*   D3 Tips and Tricks
+    *   [code](https://gist.github.com/d3noob)
+
 
 ###Video Tutorials
 *   Introduction to D3 By Curran Kelleher
