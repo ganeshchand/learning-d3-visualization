@@ -53,4 +53,27 @@ fill: none // other values: yes, actual color values:red, green, etc.
 }
 
 
+####d3 number formatting
+
+d.close = +d.close; + makes d.close field numeric.
+
+####d3 date formatting
+d3.time.format(specifier)
+
+e.g:
+var parseDate = d3.time.format("%d-%b-%y").parse;
+% => used as prefixes to separate each format type
+- => literals for the actual "-" that appears on the date
+d => zero-padded day of the month as a decimal number
+b => abbreviated month name
+y => year with the centuries as a decimal number
+
+d.date = parseDate(d.date)
+
+
+
+
+
+
+
 
