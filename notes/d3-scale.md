@@ -29,7 +29,37 @@ Input Domain is the range of possible input data values.
 
 Output range is the range of possible output values, commonly used as display values in pixel units.
 
-![example](images/scale-input-domain-output-range.tiff "example")
+![ ](images/scale-input-domain-output-range.png)
+
+###Normalization
+
+Normalization is the process of mapping a numeric values to a new value
+between 0 and 1, based on the possible minimum and maximum values.
+
+With Linear scales, D3 automatically handles the math
+required for the normalization process.
+
+###Creating a Scale
+
+d3.scale.<type>
+e.g
+var scale = d3.scale.linear();
+
+setting input domain
+
+scale.domain([100, 500]);
+
+setting output range
+
+scale.range([10, 350]);
+
+getting scale output:
+scale(100); // returns 10
+
+Instead of specifying the fixed or hardcoded values for the domain,
+always specify using the d3.min() and d3.max() values.
+
+
 
 
 
