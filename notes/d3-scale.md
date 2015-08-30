@@ -59,7 +59,7 @@ scale(100); // returns 10
 Instead of specifying the fixed or hardcoded values for the domain,
 always specify using the d3.min() and d3.max() values.
 
-
+[See example here](basic/scales/scale-basic.html)
 
 
 
