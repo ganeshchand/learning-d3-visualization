@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+        div.h-bar{
+            margin:5px 10px 5px 10px;
+            background-color: #666666;
+            text-align: right;
+        }
+        span {
+            padding-right: 5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<script title="d3 script" type="text/javascript">
+    var dataset = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10,8];
+
+    function render(dataset){
+
+        //enter:
+        d3.select("body")
+                .selectAll("div.h-bar")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", "h-bar")
+                .append("span");
+
+        /**
+         * Update:
+         * Here, we apply the modifier directly to selection made by the data function.
+         * In the update mode, data function returns the intersection between the dataset and the
+         * visual set. (A intersection B)
+         *
+         *
+          */
+
+
+        d3.select("body")
+                .selectAll("div.h-bar")
+                .data(dataset)
+                .style("width", function(d){
+                    return (d * 3) + "px"; // width = datavalue * 3
+                })
+                .select("span")
+                .text(function(d){
+                    return d;
+                });
+
+        /**
+         * exit:
+         * exit() function is used to retrieve all visual elements that are no longer associated
+         * with any data.
+         * remove() is called to remove all elements selected by the exist() function.
+         */
+
+        d3.select("body")
+                .selectAll("div.h-bar")
+                .data(data)
+                .exit()
+                .remove();
+    }
+
+    setInterval(function(){
+        dataset.shift(); // removes the top elements on the array. i.e. the element at the 0 position is removed.
+        dataset.push(Math.round(Math.random() * 100));  // append a random integer to the array
+        render(dataset);
+    }, 1500); // every 1.5 second
+
+    render(dataset);
+</script>
+</body>
+</html>

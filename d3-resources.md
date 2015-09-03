@@ -69,9 +69,17 @@
 *   [D3 API Reference](https://github.com/mbostock/d3/wiki/API-Reference)
 *   [SVG Attribute reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
 
+
+###D3 Plugins
+
+[D3 Plugins](https://github.com/mbostock/d3/wiki/Plugins) contains a wide
+variety of plugins on top of d3.
+
 ###D3 Charts Libraries
-*   Popular
+*   **Dimension** Charting Library
     *   [dc.js](http://dc-js.github.io/dc.js/): Multidimensional D3 framework
+    *   [crossfilter](http://square.github.io/crossfilter/)
+
 
 *   [dimple](http://dimplejs.org/)
 *   [Rickshaw](http://code.shutterstock.com/rickshaw/)

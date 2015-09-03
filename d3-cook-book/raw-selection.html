@@ -1,0 +1,79 @@
+<!DocType html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RAW CSS Selection Example</title>
+    <script type="text/javascript" src="../d3.v3.js"></script>
+    <style>
+        .table {
+            width: 70%;
+        }
+
+        .table td, th {
+            padding: 5px;
+        }
+
+        .table-header {
+            background-color: #666655;
+            font-weight: bold;
+            color: white;
+        }
+
+        .table-row-odd {
+            background-color: #f0f8ff;
+        }
+
+        .table-row-odd {
+            background-color: #d3d3d3;
+        }
+
+    </style>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Time</th>
+        <th>Type</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>10:22</td>
+        <td>Purchase</td>
+        <td>$10.00</td>
+    </tr>
+    <tr>
+        <td>12:12</td>
+        <td>Purchase</td>
+        <td>$12.50</td>
+    </tr>
+    <tr>
+        <td>14:11</td>
+        <td>Expense</td>
+        <td>$9.70</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<script>
+   var rows = d3.selectAll("tr");
+
+    var headerElement = rows[0][0];
+
+    d3.select(headerElement).attr("class", "table-header");
+
+    for(var i =1; i<4; i++ ){
+        if(i%2==0){
+            d3.select(rows[0][i]).attr("class", "table-row-even");
+        }
+        else{
+            d3.select(rows[0][i]).attr("class", "table-row-odd");
+        }
+    }
+</script>
+
+</body>
+</html>
