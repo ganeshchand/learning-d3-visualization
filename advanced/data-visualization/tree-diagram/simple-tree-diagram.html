@@ -58,12 +58,13 @@
     var i = 0;
 
     var treeLayout = d3.layout.tree()
-            .size(height, width);
+            .size([height, width]);   // size([]);
 
     // path generator : lines that connect the circles
     var diagonal = d3.svg.diagonal()
             .projection(function (d) {
-                return d.y, d.x; // (y,x) instead of (x,y) to render from left to right
+                return [d.y, d.x]; // (y,x) instead of (x,y) to render from left to right
+                // should return array[y,x]
             });
 
     var canvas = d3.select("body").append("svg")
