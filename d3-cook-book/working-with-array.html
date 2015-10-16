@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <title>D3 Cookbook - Working with Arrays in D3</title>
+
+    <style>
+        .code {
+            display: block;
+            font-style: italic;
+            background-color: #d3d3d3;
+            border:#969696 solid thin;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    var data = [3, 2, 11, 7, 6, 4, 10, 8, 15];
+
+    d3.select("body").append("div").attr("class", "code").text("var data = [" +data + "]")
+
+    d3.select("body")
+            .append("div")
+            .text("d3.max => ")
+            .append("span")
+            .text(d3.min(data))
+
+    d3.select("body")
+            .append("div")
+            .text("d3.max => ")
+            .append("span")
+            .text(d3.max(data))
+
+    d3.select("body")
+            .append("div")
+            .text("d3.extent => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.extent(data))
+
+    d3.select("body")
+            .append("div")
+            .text("d3.sum => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.sum(data))
+
+    d3.select("body")
+            .append("div")
+            .text("d3.median => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.median(data))
+
+    d3.select("body")
+            .append("div")
+            .text("d3.mean => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.mean(data))
+
+    d3.select("body")
+            .append("div")
+            .text("array.sort(d3.ascending) => ")
+            .append("span")
+            .attr("id","test")
+            .text(data.sort(d3.ascending));
+    d3.select("body")
+            .append("div")
+            .text("array.sort(d3.ascending) => ")
+            .append("span")
+            .attr("id","test")
+            .text(data.sort(d3.descending));
+
+    d3.select("body")
+            .append("div")
+            .text("d3.quantile(array.sort(d3.ascending),0.25) => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.quantile(data.sort(d3.ascending),0.25));
+
+    d3.select("body")
+            .append("div")
+            .text("d3.bisect(array.sort(d3.ascending),0.25) => ")
+            .append("span")
+            .attr("id","test")
+            .text(d3.bisect(data.sort(d3.ascending),6));
+
+
+
+    var nestedData = [
+        {date:"2011-11-14T16:17:54Z", quantity: 2, total: 190, tip: 100, type: "tab"}
+    ];
+
+    d3.select("body").append("div").attr("class", "code").text("var nestedData = [" +nestedData + "]")
+
+
+
+
+</script>
+</body>
+</html>

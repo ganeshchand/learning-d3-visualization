@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp: Bar Chart</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+
+    /** Using tweets.json**/
+
+    d3.json("data/tweets.json", function(error, data){
+        console.log(data.tweets);
+        dataViz(data.tweets);
+    });
+
+    function dataViz(inData){
+        var nestedTweets = d3.nest()
+                .key(function(d) { return d.user; })
+                .entries(inData);
+        console.log(nestedTweets);
+
+        // create a new attribute based on the number of tweets
+
+        nestedTweets.forEach(function(d){
+            d.numTweets = d.values.length;
+        });
+
+        var maxTweets = d3.max(nestedTweets, function(d){
+            return d.numTweets;
+        });
+
+        var yScale = d3.scale.linear()
+                .domain([0, maxTweets])
+                .range([0, 100]);
+
+        var svg = d3.select("body").append("svg")
+                .style("width", 600)
+                .style("height", 480)
+                .style("border", "1px solid lightgrey")
+                .style("margin-top","10px")
+                .style("margin-left","10px");
+
+        d3.select("svg").selectAll("rect")
+                .data(nestedTweets)
+                .enter()
+                .append("rect")
+                .attr("width", 50)
+                .attr("height", function(d){
+                    return yScale(d.numTweets);
+                })
+                .attr("x", function(d,i){
+                    return i * 60;
+                })
+                .attr("y", function(d){
+                    return 480 - yScale(d.numTweets);
+                })
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", 1)
+                .style("opacity", 0.5);
+    }
+
+</script>
+
+</body>
+</html>

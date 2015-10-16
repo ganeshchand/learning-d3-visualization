@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script title="d3 script" type="text/javascript">
+    var dataset = [
+        {width: 10, color: 23},
+        {width: 15, color: 33},
+        {width: 30, color: 40},
+        {width: 50, color: 60},
+        {width: 80, color: 22},
+        {width: 55, color: 10},
+        {width: 30, color: 30},
+        {width: 20, color: 60},
+        {width: 8, color: 10}
+
+    ];
+
+//    console.log(dataset.length);
+
+    var maxColorValue = d3.max(dataset, function(d){ return parseInt(d.color);})
+    console.log(maxColorValue);
+    var colorScale = d3.scale.linear()
+            .domain([0, maxColorValue])
+            .range(["#add8e6", "blue"]);
+
+    function render(data){
+
+        //enter: add new divs
+        d3.select("body").selectAll("div.h-bar")
+            .data(data)
+            .enter()
+            .append("div")
+            .attr("class", "h-bar")
+            .style("fill", "blue")
+            .append("span")
+
+        //exit:remove divs for data elements that are no longer present in the dataset
+
+//        var data = [
+//            {width: 10, color: 23},
+//            {width: 15, color: 33}];
+
+        d3.select("body").selectAll("div.h-bar")
+                .data(data)
+                .exit()
+                .transition()
+                .delay(1500)
+                .remove();
+
+
+        //update:
+
+        d3.select("body").selectAll("div.h-bar")
+                .data(data)
+                .attr("class", "h-bar")
+                .style("width", function(d){ return d.width * 5 + "px"})
+                .style("background-color", function(d){ return colorScale(d.color);})
+                .select("span")
+                .text(function(d) {return d.width})
+
+
+        function randomValue(){ return Math.round(Math.random() * 100)}
+
+        setInterval(function(){
+            data.shift(); // remove the first element
+            data.push({width: randomValue(), color: randomValue()});
+            render(data);
+        }, 2500);
+
+
+    }
+
+
+    render(dataset);
+
+</script>
+</body>
+</html>

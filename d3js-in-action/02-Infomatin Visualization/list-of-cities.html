@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script charset="UTF-8">
+
+    function visualizeData(inData) {
+        d3.select("body").selectAll("div.cities")
+                .data(inData)
+                .enter()
+                .append("div")
+                .append("li")
+                .attr("class", "cities")
+                .html(function(d,i){ return d.city;})
+                .style("color", "blue");
+
+    };
+
+    d3.csv("data/cities.csv", function(error, data){
+            visualizeData(data);
+
+
+        data_ = data;
+        console.log("city:"+data[0].city)
+        console.log("Population:"+data[0].population);
+    });
+
+
+    /**
+    d3.csv("data/cities.csv", function(error, data){
+
+       console.log(data)
+        for(x in data){
+            console.log(data[x].country) // gives country list
+        }
+    });
+
+    **/
+</script>
+
+</body>
+</html>

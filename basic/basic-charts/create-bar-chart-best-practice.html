@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <title>Create D3 Bar Chart using best practices</title>
+</head>
+<body>
+<script>
+
+    function setSvgMargin(top, right, bottom, left){
+    var margin = {top: 50, right: 50, bottom: 50, left: 50}
+        return margin;
+    }
+    /**
+     * Creates an SVG Container
+     * @param width of an SVG object
+     * @param height of an SVG object
+     * @returns {{width: number, height: number}} an SVG object
+     */
+    function createSvgContainer(width, height, margin){
+        var svg = {
+            width: 300 + margin.left  + margin.right,
+            height : 200  + margin.top + margin.bottom
+        };
+        return svg;
+    }
+
+    /**
+     * Calculates the width of each rectangle
+     * @param svg
+     * @param data
+     * @param padding
+     * @returns {number} a width of each rectangle
+     */
+    function calWidthOfRect(svg, data, padding){
+        var numberOfdataPoints = data.length;
+        var widthOfRectangle = svg.width / numberOfdataPoints - padding;
+        return widthOfRectangle;
+    }
+
+    function calHeigthOfRect(svg, data, magnifyFactor){
+//        var heightOfRectangle = data.
+    }
+
+    // creating svg
+    var margin = setSvgMargin(50,50,50,50);
+    var svgContainer = createSvgContainer(100, 100, margin);
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", svgContainer.width)
+            .attr("height", svgContainer.height);
+
+    var dataSet =  [5, 15, 20, 22, 30, 11, 30, 8, 25, 7];
+
+    var rectBars = svg.selectAll("rect")
+            .data(dataSet)
+            .enter()
+            .append("rect")
+            .attr("width", function(){
+                return calHeigthOfRect(svg, dataSet, 2);
+            })
+            .attr("height", 10)
+            .attr("x", 0)
+            .attr("y", 0);
+
+
+
+</script>
+</body>
+</html>

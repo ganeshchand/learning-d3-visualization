@@ -54,25 +54,36 @@
         <td>Expense</td>
         <td>$9.70</td>
     </tr>
+    <tr>
+        <td>16:11</td>
+        <td>Expense</td>
+        <td>$10.70</td>
+    </tr>
     </tbody>
 
 </table>
 
 <script>
-   var rows = d3.selectAll("tr");
-
+   var rows = d3.selectAll("tr"); // rows is an array of arrays. Each array contains a row.
+//   console.log(rows);   console.log(rows[0]);
     var headerElement = rows[0][0];
 
     d3.select(headerElement).attr("class", "table-header");
 
-    for(var i =1; i<4; i++ ){
-        if(i%2==0){
+    for(var i =1; i<rows[0].length; i++ ){
+        if(i%2 == 0){
             d3.select(rows[0][i]).attr("class", "table-row-even");
         }
         else{
             d3.select(rows[0][i]).attr("class", "table-row-odd");
         }
     }
+    /* You can also use each()
+    rows.each(function (d,i){
+        console.log(i);
+        console.log(rows[0][i])
+    })
+    */
 </script>
 
 </body>

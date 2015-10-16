@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp: Adding D3 shapes and Dynamic data visualization</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+    // creating svg: SVG is required to add D3 shapes
+    d3.select("body").append("svg")
+            .style("width", "500")
+            .style("height", "500")
+            .style("border", "1px lightgray solid");
+
+
+    // Adding D3 shapes
+
+    d3.select("svg")
+            .append("line")
+            .attr("x1", 20)
+            .attr("y1", 20)
+            .attr("x2", 200)
+            .attr("y2", 400)
+            .style("stroke", "black")
+            .style("stroke-width", "2");
+
+
+
+    d3.select("svg")
+            .append("circle")
+            .attr("r", 20)
+            .attr("cx",20)
+            .attr("cy",20)
+            .style("fill","red")
+
+    d3.select("svg")
+            .append("text")
+            .attr("x",20)
+            .attr("y",20)
+            .attr("id", "a")
+            .style("opacity", 0)
+            .text("HELLO");
+
+    d3.select("svg")
+            .append("circle")
+            .attr("r", 80)
+            .attr("cx",200)
+            .attr("cy",400)
+            .style("fill","lightblue");
+
+    d3.select("svg")
+            .append("text")
+            .attr("x",200)
+            .attr("y",400)
+            .text("WORLD")
+            .style("opacity",0)
+            .attr("id", "b");
+
+
+
+    d3.select("#a").transition().delay(1000).style("opacity",1);
+    d3.select("#b").transition().delay(3000).style("opacity",.7);
+
+    d3.selectAll("circle").transition().delay(3000).duration(2000).attr("cy", 200)
+
+</script>
+</body>
+</html>

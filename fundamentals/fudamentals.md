@@ -105,6 +105,23 @@ For complete CSS property reference, click [here](https://developer.mozilla.org/
 *   Reference an external stylesheet from the HTML: <link rel="stylesheet" href="styles.css">
 *   Attache inline style: <p style="color: blue; font-size: 48px"<p/>
 
+###Styles, Attributes and Properties
+
+Three categories of information about each element determine its behavior and appearance: styles, attributes, and properties.
+Styles can determine transparency, color, size, borders, and so on.
+Attributes typically refer to classes, IDs, and interactive behavior, though some attributes can also determine appearance, depending on which type of element you’re dealing with.
+Properties typically refer to states, such as the “checked” property of a check box, which is true if the box is checked and false if the box is unchecked.
+
+
+D3 has three corresponding functions to modify these values.”
+
+d3.select("#someDiv").style("border", "5px darkgray dashed");
+d3.select("#someDiv").attr("id", "newID");
+d3.select("#someCheckbox").property("checked", true);
+
+
+
+
 
 
 

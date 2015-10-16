@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+    d3.select("body").append("div")
+
+            .style("border", "1px black solid")
+            .style("background-color", "#565656")
+            .style("color", "white")
+            .style("font-size", "24px")
+
+            .attr("id", "newDiv")
+            .attr("class", "d3div")
+
+            .html("Hello, World!")
+
+            .on("click", function(){
+                console.log("You clicked a div")
+            })
+            .on("mouseover", function(){
+                d3.select("#newDiv").style("cursor", "pointer")
+            })
+
+    /** The .on() function allows us to create an event listener for the currently selected
+     * element or se of elements. It can accept variety of events that can happen to an element:
+     * click, mouseover, mouseout, etc.
+     */
+
+</script>
+</body>
+</html>

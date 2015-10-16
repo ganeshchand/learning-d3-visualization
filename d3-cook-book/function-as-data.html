@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>D3 Cookbook recipe: Use JavaScript function as a data source</title>
+    <script id="d3v3" src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+            background-color: silver;
+            margin: 10px 10px 10px 10px;
+        }
+        .v-bar {
+            min-height: 1px;
+            min-width: 30px;
+            background-color: #4682b4;
+            margin-right: 2px;
+            font-size: 10px;
+            color: #f0f8ff;
+            text-align: center;
+            width: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="recipeDescription">
+    <p>
+      This D3 sample visualized the output of formula <em>15 + x * x</em> using
+        a series of vertical bars, each of them annotated with its representing integral value.
+      This visualization adds a new bar to the right of the previous one every 1.5 seconds.
+    </p>
+</div>
+<div id="container"></div>
+
+<script type="text/javascript">
+    var data = []; // empty array
+
+    var next = function(x){
+        return 15 + (x * x); // given a number, it squares the number and adds 15;
+    };
+
+    var newData = function(){
+        console.log(next);
+        data.push(next);  // pushes a reference to a next function with the passed value
+        console.log(data);
+        return data;
+    };
+
+    function render(){
+        var selection = d3.select("#container")
+                .selectAll("div")
+                .data(newData()); // function binding - newData() here actually returns
+        // the any array of unction references. i.e. references to the next().
+
+        //enter:
+        selection.enter().append("div").append("span");
+
+        // update:
+
+        selection.attr("class", "v-bar")
+                .style("height", function(d,i) { return d(i) + "px"; })
+                .select("span")
+                .text(function(d,i){ return d(i); });
+
+        // here, d is a datum that is actually a reference to the next(). So, it
+        // resolves as next(i)
+
+        // exit:
+
+        selection.exit().remove();
+    }
+
+//        setInterval(function(){
+//            render();
+//        }, 1500); // every 1.5 seconds.
+
+    render();
+</script>
+
+</body>
+</html>
+
+15 16 19 24 31 40 51 647996115136159184211
+
+        15 + 0 * 0
+        15 + 1 * 1
+        15 + 2 * 2
+        15 + 3 * 3

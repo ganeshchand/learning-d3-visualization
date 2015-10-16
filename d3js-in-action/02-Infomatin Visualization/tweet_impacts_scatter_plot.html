@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp: Scatter Chart</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+
+    /** Using tweets.json**/
+
+    d3.json("data/tweets.json", function (error, data) {
+//        console.log(data.tweets);
+        dataViz(data.tweets);
+    });
+
+    function dataViz(incomingData) {
+
+        incomingData.forEach(function (el) {
+            el.impact = el.favorites.length + el.retweets.length
+            el.tweetTime = new Date(el.timestamp);
+        })
+
+        var maxImpact = d3.max(incomingData, function(el) {return el.impact});
+        var startEnd = d3.extent(incomingData, function(el) {return el.tweetTime});
+        var timeScale = d3.time.scale().domain(startEnd).range([20,480]);
+        var yScale = d3.scale.linear().domain([0,maxImpact]).range([0,460]);
+        var radiusScale = d3.scale.linear().domain([0,maxImpact]).range([1,20]);
+        var colorScale = d3.scale.linear().domain([0,maxImpact]).range(["white","#990000"]);
+
+        d3.select("body").append("svg");
+        d3.select("svg")
+                .selectAll("circle")
+                .data(incomingData)
+                .enter()
+                .append("circle")
+                .attr("r", function(d) {return radiusScale(d.impact)})
+                .attr("cx", function(d,i) {return timeScale(d.tweetTime)})
+                .attr("cy", function(d) {return 480 - yScale(d.impact)})
+                .style("fill", function(d) {return colorScale(d.impact)})
+                .style("stroke", "black")
+                .style("stroke-width", "1px")
+    }
+
+</script>
+
+</body>
+</html>

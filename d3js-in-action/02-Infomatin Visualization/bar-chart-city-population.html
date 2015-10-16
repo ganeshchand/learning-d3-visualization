@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>A Simple D3 WebApp: Bar Chart</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+    /** Using cities.csv data **/
+
+    d3.csv("data/cities.csv", function(error, data){
+        dataViz(data);
+    });
+
+    function dataViz(inData){
+
+        var maxPopulation = d3.max(inData,
+                function(d) { return parseInt(d.population);}
+                // Transform population value into an integer first.
+        );
+
+        console.log(maxPopulation);
+
+        var yScale = d3.scale.linear()
+                .domain([0, maxPopulation])
+                .range([0, 460])
+
+        var svg = d3.select("body").append("svg")
+                .style("width", 600)
+                .style("height", 480)
+                .style("border", "1px solid lightgrey")
+                .style("margin-top","10px")
+                .style("margin-left","10px")
+
+        d3.select("svg").selectAll("rect")
+                .data(inData)
+                .enter()
+                .append("rect")
+                .attr("width", 50)
+                .attr("height", function(d){
+                    return yScale(parseInt(d.population));
+                })
+                .attr("x", function(d,i){
+                    return i * 60;
+                })
+                .attr("y", function(d){
+                    return 480 - yScale(parseInt(d.population));
+                })
+                .style("fill", "blue")
+                .style("stroke", "red")
+                .style("stroke-width", 1)
+                .style("opacity", 0.5);
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
