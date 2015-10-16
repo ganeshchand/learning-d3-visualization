@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3- Tree Layout Basic</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+    var canvas = d3.select("body").append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .append("g")
+            .attr("transform", "translate(50,50)");
+
+    var treeLayout = d3.layout.tree()
+            .size([400, 400]);
+
+    d3.json("data/tree-data.json", function(data){
+        console.log(data);
+        var nodes = treeLayout.nodes(data); // nodes contains array of objects with each object's x, y co-ordinate and it's children
+        console.log(nodes);
+        var links = treeLayout.links(nodes); // links contains array of objects with source and target. The content of source and target element are nodes.
+        // links are used to connect nodes
+        console.log(links);
+
+        // create "g" element that will hold all circles
+        // For each object (i.e. each node corresponds to a data object), we create "g" and append a circle
+        var node = canvas.selectAll(".node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function(d){
+
+                    // moving g based on x, y property of each data point
+                    //
+                    /** By default, return "translate(" + d.x + "," + d.y + ")" renders top-down.
+                     * to render, left to right,you need to flip x and y co-ordinates
+                     */
+                    return "translate(" + d.y + "," + d.x + ")";
+                })
+
+        // adding circle
+        node.append("circle")
+                .attr("r",5)
+                .attr("fill", "blue");
+
+        // adding text
+        node.append("text")
+                .text(function (d){ return d.name})
+
+        // connecting circles by creating path objects. Path objects are renderable d3 objects.
+
+        // path generator
+        var diagonal = d3.svg.diagonal()
+                .projection(function(d) { return d.y + "," + d.x})
+
+        /** By default, if you do not specify projection, it generates the co-ordinates with (x,y) that drows the line from top to bottom
+         * To render left -> right, you need to use projection() accessor method and specify(y,x)
+         */
+        canvas.selectAll(".link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("fill", "none")
+                .attr("stroke", "#ADADAD")
+                .attr("d", diagonal);
+
+
+    })
+</script>
+</body>
+</html>
