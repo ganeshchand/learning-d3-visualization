@@ -60,7 +60,7 @@
     var treeLayout = d3.layout.tree()
             .size([height, width]);   // size([]);
 
-    // path generator : lines that connect the circles
+    // path generator : lines that connect the nodes (circles)
     var diagonal = d3.svg.diagonal()
             .projection(function (d) {
                 return [d.y, d.x]; // (y,x) instead of (x,y) to render from left to right
@@ -72,6 +72,7 @@
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    // the g element will contain nodes, text and links.
 
     var root = treeData[0];
 
@@ -80,16 +81,18 @@
     function update(source) {
         // Compute the new tree Layout
 
-        var nodes = treeLayout.nodes(root).reverse();
+        var nodes = treeLayout.nodes(root); // the treelayout can determine the root nodes
         console.log(nodes);
-        var links = treeLayout.links(nodes);
+        // each node has: children, depth, id, name, parent, x, y
+        var links = treeLayout.links(nodes); // the tree layout can determine the links based on the nodes
+        // each link has source and target, each of which is a node.
 
-        // Normalize for fixed-depth.
+        // Normalize for fixed-depth. This is the horizontal spacing of nodes.
         nodes.forEach(function (d) {
             d.y = d.depth * 180;
         })
 
-        // Declare the nodes¦
+        // Declare the nodes
         var node = canvas.selectAll("g.node")
                 .data(nodes, function (d) {
                     return d.id || (d.id = ++i);
@@ -104,9 +107,16 @@
 
         nodeEnter.append("circle")
                 .attr("r", 10)
-                .style("fill", "#fff");
+                .style("fill", "#fff"); // white fill
 
         nodeEnter.append("text")
+
+        /**
+         * This is a neat piece of code that allows the text to be placed on the left side of the
+         * node if it has children (d.children) or on the right if it has has no children or d._children.
+         * This becomes useful when your visualization is interactive
+         * It also alligns the text correctly and makes sure it is visible.
+         */
                 .attr("x", function (d) {
                     return d.children || d._children ? -13 : 13;
                 })
@@ -119,10 +129,10 @@
                 })
                 .style("fill-opacity", 1);
 
-        // Declare the linksâ€¦
+        // Declare the link
         var link = canvas.selectAll("path.link")
                 .data(links, function (d) {
-                    return d.target.id;
+                    return d.target.id;  // do not use d.source.id
                 });
 
         // Enter the links.
