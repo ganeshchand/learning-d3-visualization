@@ -4,15 +4,11 @@
     <meta charset="utf-8">
     <title>D3- Simple Tree Diagram</title>
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    <style>
-        /**circle element within an element with class .node **/
-        .node circle {
-            fill: #fff;
-            stroke: steelblue;
-            stroke-width: 3px;
-        }
 
-        /**text element within an element with class .node **/
+
+    <style>
+        body { fill: #ff0000; }
+         /**text element within an element with class .node **/
         .node text {
             font: 12px sans-serif;
         }
@@ -25,29 +21,50 @@
     </style>
 </head>
 <body>
+<div id="treeLayoutOptions">
+    <input name="horizontalTreeLayout"
+            type="button"
+            value="Horizontal Tree Layout"
+            onclick="horizontalView()"/>
+</div>
 <script>
     var treeData = [
         {
             "name": "Top Level",
             "parent": "null",
+            "value": 10,
+            "type": "black",
+            "level": "red",
             "children": [
                 {
                     "name": "Level 2: A",
                     "parent": "Top Level",
+                    "value": 15,
+                    "type": "grey",
+                    "level": "red",
                     "children": [
                         {
                             "name": "Son of A",
-                            "parent": "Level 2: A"
+                            "parent": "Level 2: A",
+                            "value": 5,
+                            "type": "steelblue",
+                            "level": "orange"
                         },
                         {
                             "name": "Daughter of A",
-                            "parent": "Level 2: A"
+                            "parent": "Level 2: A",
+                            "value": 8,
+                            "type": "steelblue",
+                            "level": "red"
                         }
                     ]
                 },
                 {
                     "name": "Level 2: B",
-                    "parent": "Top Level"
+                    "parent": "Top Level",
+                    "value": 10,
+                    "type": "grey",
+                    "level": "green"
                 }
             ]
         }
@@ -63,6 +80,7 @@
     var treeLayout = d3.layout.tree()
             .size([height, width]);   // size([]); treeLayout is later used to calculated nodes and links based on the data
 
+    function horizontalView(){
     // path generator : lines that connect the nodes (circles). This is used later to draw the lines.
     var diagonal = d3.svg.diagonal()
             .projection(function (d) {
@@ -106,14 +124,21 @@
                 });
 
         nodeEnter.append("circle")
-                .attr("r", 10)
-                .style("fill", "#fff");
+                .attr("r", function (d) {
+                    return d.value;
+                })
+                .attr("stroke", function (d) {
+                    return d.type;
+                })
+                .style("fill", function (d) {
+                    return d.level
+                });
 
         nodeEnter.append("text")
                 .attr("x", function (d) {
-                    return d.children || d._children ? -13 : 13;
+                    return d.children || d._children ? (d.value + 4) * -1 : d.value + 4;
                 })
-                //http://stackoverflow.com/questions/19127035/what-is-the-difference-between-svgs-x-and-dx-attribute
+            //http://stackoverflow.com/questions/19127035/what-is-the-difference-between-svgs-x-and-dx-attribute
                 .attr("dy", ".35em")
                 .attr("text-anchor", function (d) {
                     return d.children || d._children ? "end" : "start";
@@ -132,9 +157,14 @@
         // add links.
         link.enter().insert("path", "g")
                 .attr("class", "link")
+                .style("stroke", function (d) {
+                    return d.target.level
+                })
                 .attr("d", diagonal);
+    }
 
     }
+
 
 </script>
 </body>
