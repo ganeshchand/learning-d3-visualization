@@ -13,4 +13,11 @@ books, blogs and online tutorials.
 ##D3 Notes
 *   [D3 scale](notes/d3-scale.md)
 
-##Scalable Vector Grahics
+##Scalable Vector Grahics - http://www.w3.org/Graphics/SVG/About.html
+
+##Testing Visualization
+*   Using [Jasmine](http://jasmine.github.io/2.3/introduction.html)
+*   Download from https://github.com/jasmine/jasmine/releases
+*   http://busypeoples.github.io/post/testing-d3-with-jasmine/
+    
+    
